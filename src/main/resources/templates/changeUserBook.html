@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение информации о читателе</title>
+</head>
+<body>
+
+<h1>Изменение информации о читателе</h1>
+
+<form th:action="@{/user/change/{id}(id=${changedUser.getId()})}" method="post" th:object="${changedUser}">
+    <label for="FIO">ФИО:</label>
+    <input type="text" id="FIO" name="FIO" th:field="*{FIO}" required>
+
+    <label for="birthday">Автор книги:</label>
+    <input type="date" id="birthday" name="birthday" th:field="*{birthday}" required>
+    <button type="submit">Изменить информацию о читателе</button>
+</form>
+<br>
+<a href="http://localhost:8080/user/allUsers"><button>Вернуться назад</button></a>
+
+</body>
+</html>

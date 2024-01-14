@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение информации о книге</title>
+</head>
+<body>
+
+<h1>Изменение информации о книге</h1>
+
+<form th:action="@{/book/change/{id}(id=${changedBook.getId()})}" method="post" th:object="${changedBook}">
+    <label for="name">Наименование книги:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required>
+
+    <label for="author">Автор книги:</label>
+    <input type="text" id="author" name="author" th:field="*{author}" required>
+
+    <label for="isbn">ISBN книги:</label>
+    <input type="text" id="isbn" name="isbn" th:field="*{ISBN}" required>
+
+    <button type="submit">Изменить информацию</button>
+</form>
+<br>
+<a href="http://localhost:8080/book/allBook"><button>Вернуться назад</button></a>
+
+
+</body>
+</html>

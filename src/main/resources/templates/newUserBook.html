@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление нового читателя</title>
+</head>
+<body>
+
+<h1>Добавление нового читателя</h1>
+
+<form action="/user/newUser" method="post" th:object="${newUser}">
+    <label for="FIO">ФИО:</label>
+    <input type="text" id="FIO" name="FIO" th:field="*{FIO}" required>
+
+    <label for="birthday">Автор книги:</label>
+    <input type="date" id="birthday" name="birthday" th:field="*{birthday}" required>
+
+    <button type="submit">Добавить читателя</button>
+</form>
+<br>
+<a href="http://localhost:8080/"><button>Вернуться назад</button></a>
+
+</body>
+</html>

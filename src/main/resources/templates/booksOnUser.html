@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис взятия книги</title>
+</head>
+<body>
+
+<h1>Сервис взятия книги</h1>
+
+<form action="/booksOnUser" method="post">
+
+    <label for="userId">Select User:</label>
+    <select id="userId" name="userId">
+        <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.FIO}"></option>
+    </select>
+
+    <br> <br>
+
+    <label for="bookId">Select Book:</label>
+    <select id="bookId" name="bookId">
+        <option th:each="book : ${books}" th:value="${book.id}" th:text="${book.name}"></option>
+    </select>
+
+    <br> <br>
+
+    <button type="submit">Взять книгу</button>
+
+</form>
+
+</body>
+</html>
